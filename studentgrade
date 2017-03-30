@@ -1,0 +1,272 @@
+<html>
+<head>
+ <STYLE type="text/css">
+     
+h2 { 
+        text-align:center;
+        color: pink;                /* text color is pink */ 
+        background: purple;            /* background color is purple */
+        margin: 12px 12px 12px 30px;
+        padding: 12px 0px 12px 12px; 
+        list-style: none             
+                                     
+ }
+</STYLE>
+</head>
+
+<body>
+    <?php 
+    
+       $name =$_REQUEST['name']; 
+  $mathematics = $_REQUEST['mathematics'];
+   $chemistry = $_REQUEST['chemistry'];
+   $biology = $_REQUEST['biology'];
+   $physics = $_REQUEST['physics'];
+   $english = $_REQUEST['english'];
+  $sex = $_REQUEST['sex'];
+  $city = $_REQUEST['city'];    
+  $contact =  $_REQUEST['contact']; 
+  $name =  $_REQUEST['name'];
+  $remarks =  $_REQUEST['remarks'];
+       
+     
+  if (isset($_REQUEST['solve']))
+       {
+    
+    $total = $_REQUEST['total'];
+    $average = $_REQUEST['average'];
+       
+  
+  $total = ($mathematics + $chemistry + $physics + $biology + $english);
+  
+  $average = round($total/5);
+
+
+  echo "my name is " . $name ."<br>";
+  echo "my city is " . $city . "<br>";
+ 
+
+  if ($average >= 45) 
+     {
+          $remarks = "PASSED";
+        }
+       else {
+           $remarks = "FAILED";
+       } 
+ } 
+ 
+ if (isset($_REQUEST['clear']))
+       {
+    $name = ""; 
+    $date = ""; 
+     $mathematics="";
+    $physics = ""; 
+    $biology =  "";  
+    $chemistry = "";
+    $english = "";
+       $city = ""; 
+       $total = "";
+       $average = "";
+    $remarks = ""; 
+    
+       }
+    
+
+  
+?>
+
+<h2> <marquee direction=left behavior=alternate> Medow Hall College Student Grading System </marquee> </h2>
+<br>
+<FORM NAME="form1" METHOD="POST" ACTION="">
+<TABLE BORDER="0">
+  <tr> </tr> <tr> </tr>
+  <TR>
+    <TD>Student Name</TD>
+    <TD>
+      <INPUT TYPE="TEXT" NAME="name" SIZE="30"MAXLENGTH=30
+     value="<?php echo $name; ?>">
+   
+   
+      <TD>  city</TD>
+    <TD>
+      <INPUT TYPE="TEXT" NAME="city" SIZE="33" MAXLENGTH=35
+   value="<?php echo $city; ?>">
+   </TD>
+    </TR>
+    <tr> </tr> <tr> </tr>
+ <tr> </tr> <tr> </tr>
+  
+  <TR>
+    <TD>mathematics</TD>
+    <TD><INPUT TYPE="TEXT" NAME="mathematics" SIZE="1"  MAXLENGTH=3
+    value="<?php echo $mathematics; ?>">
+    
+
+      <?
+    $mathematics= 0;
+  if  ($_REQUEST['mathematics'] >=70){
+   echo  "A";
+  }elseif  ($_REQUEST['mathematics'] >=60){
+   echo "B";
+  }elseif  ($_REQUEST['mathematics'] >=50){
+   echo  "C";
+}elseif  ($_REQUEST['mathematics']>=40){
+  echo "D";
+  }elseif  ($_REQUEST['mathematics']>=45){
+  echo "E";
+   }elseif  ($_REQUEST['mathematics'] <=39){
+   echo "F";
+   } else { echo "no input";
+   }
+   ?>
+ </TD>
+
+ <TD>chemistry</TD>
+    <TD><INPUT TYPE="TEXT" NAME="chemistry" SIZE="1"  MAXLENGTH=3
+    value="<?php echo $chemistry; ?>">
+  
+       <?
+    $chemistry= 0;
+  if  ($_REQUEST['chemistry'] >=70){
+   echo  "A";
+  }elseif  ($_REQUEST['chemistry'] >=60){
+   echo "B";
+  }elseif  ($_REQUEST['chemistry'] >=50){
+   echo  "C";
+}elseif  ($_REQUEST['chemistry']>=40){
+  echo "D";
+  }elseif  ($_REQUEST['chemistry']>=45){
+  echo "E";
+   }elseif  ($_REQUEST['chemistry'] <=39){
+   echo "F";
+   } else { echo "no input";
+   }
+   ?>
+    
+ </TD>
+
+<tr> </tr> <tr> </tr>
+ <tr> </tr> <tr> </tr>
+
+ <TD>physics</TD>
+    <TD><INPUT TYPE="TEXT" NAME="physics" SIZE="1"  MAXLENGTH=3
+    value="<?php echo $physics; ?>">
+   
+       <?
+    $physics= 0;
+  if  ($_REQUEST['physics'] >=70){
+   echo  "A";
+  }elseif  ($_REQUEST['physics'] >=60){
+   echo "B";
+  }elseif  ($_REQUEST['physics'] >=50){
+   echo  "C";
+}elseif  ($_REQUEST['physics']>=40){
+  echo "D";
+  }elseif  ($_REQUEST['physics']>=45){
+  echo "E";
+   }elseif  ($_REQUEST['physics'] <=39){
+   echo "F";
+   } else { echo "no input";
+   }
+   ?> 
+    
+ </TD>
+
+ <TD>biology</TD>
+    <TD><INPUT TYPE="TEXT" NAME="biology" SIZE="1"  MAXLENGTH=3
+    value="<?php echo $biology; ?>">
+<?
+     $biology= 0;
+  if  ($_REQUEST['biology'] >=70){
+   echo  "A";
+  }elseif  ($_REQUEST['biology'] >=60){
+   echo "B";
+  }elseif  ($_REQUEST['biology'] >=50){
+   echo  "C";
+}elseif  ($_REQUEST['biology']>=40){
+  echo "D";
+  }elseif  ($_REQUEST['biology']>=45){
+  echo "E";
+   }elseif  ($_REQUEST['biology'] <=39){
+   echo "F";
+   } else { echo "no input";
+   }
+   ?> 
+ </TD>
+
+<tr> </tr> <tr> </tr>
+ <tr> </tr> <tr> </tr>
+
+ <TD>english</TD>
+    <TD><INPUT TYPE="TEXT" NAME="english" SIZE="1"  MAXLENGTH=3
+    value="<?php echo $english; ?>">
+    
+    <?
+     $english= 0;
+  if  ($_REQUEST['english'] >=70){
+   echo  "A";
+  }elseif  ($_REQUEST['english'] >=60){
+   echo "B";
+  }elseif  ($_REQUEST['english'] >=50){
+   echo  "C";
+}elseif  ($_REQUEST['english']>=40){
+  echo "D";
+  }elseif  ($_REQUEST['english']>=45){
+  echo "E";
+   }elseif  ($_REQUEST['english'] <=39){
+   echo "F";
+   } else { echo "no input";
+   }
+   ?>
+ </TD>
+
+  
+      </TR>
+
+
+
+     <tr> </tr> <tr> </tr>
+ <tr> </tr> <tr> </tr>
+  <TR>
+    <TD>total</TD>
+    <TD><INPUT TYPE="TEXT" NAME="total" SIZE="1" MAXLENGTH=3
+     value="<?php echo $total; ?>" readonly>
+ </TD>
+    <TD>average</TD>
+     <TD>
+      <INPUT TYPE="TEXT" NAME="average" SIZE="40" MAXLENGTH=40
+    value="<?php echo $average; ?>" readonly>
+    </TD>
+    </TR>
+     <tr> </tr> <tr> </tr>
+ <tr> </tr> <tr> </tr>
+ <TR>
+    
+     <TD>Gender</TD>
+  <td> <select name="sex"> 
+  <option>Male</option>
+  <option>Female</option>
+  </select>
+      </td>
+ 
+   
+ </tr>
+    <tr> </tr> <tr> </tr>
+ <tr> </tr> <tr> </tr>
+  <tr>
+  <TD>Remarks</TD>
+    <TD>
+      <INPUT TYPE="TEXT" NAME="remarks" SIZE="10" 
+    value="<?php echo $remarks; ?>" READONLY>
+   </TD>
+     </TR>
+    </TABLE>
+  <!-- End of the Table -->
+  
+<P><input type="submit" name="solve" value="Compute"> 
+<input type="submit" name="clear" value=" Clear ">
+
+</P>
+</FORM>
+</body>
+</html>
