@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+<?php
+  $hours_in_day   = 24; 
+$minutes_in_hour= 60;
+$seconds_in_mins= 60;
+
+$birth_date     = new DateTime("1993-12-03T00:00:00");
+$current_date   = new DateTime();
+
+$diff           = $birth_date->diff($current_date);
+
+echo $years     = $diff->y . " years " . $diff->m . " months " . $diff->d . " day(s)"; echo "<br/>";
+
+
+?>
+
+
+</body>
+</html>
